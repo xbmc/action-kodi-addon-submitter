@@ -1,0 +1,26 @@
+# action.yml
+name: 'Kodi addon submitter action'
+description: 'Automatically submits your addon to the official repository when creating a new tag'
+inputs:
+  kodi-repository:  # Kodi repository project name (repo-scripts for github.com/xbmc/repo-scripts or repo-plugins for github.com/xbmc/repo-plugins)
+    description: 'Minimal kodi version where this addon should work (gotham, helix, isengard, jarvis, krypton, leia, matrix)'
+    required: true
+    default: 'matrix'
+  kodi-version:  # repo-scripts for github.com/xbmc/repo-scripts or repo-plugins for github.com/xbmc/repo-plugins
+    description: 'Repository name (repo-scripts for github.com/xbmc/repo-scripts or repo-plugins for github.com/xbmc/repo-plugins)'
+    required: true
+    default: 'repo-plugins'
+  addon-id:
+    description: 'Your addon id'
+    required: true
+    default: ''
+outputs:
+    addon-zip:
+        description: 'The path to the zip file of the addon'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.kodi-repository }}
+    - ${{ inputs.kodi-version }}
+    - ${{ inputs.addon-id }}

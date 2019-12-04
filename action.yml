@@ -5,7 +5,7 @@ inputs:
   kodi-repository:  # Kodi repository project name (repo-scripts for github.com/xbmc/repo-scripts or repo-plugins for github.com/xbmc/repo-plugins)
     description: 'Minimal kodi version where this addon should work (gotham, helix, isengard, jarvis, krypton, leia, matrix)'
     required: true
-    default: 'matrix'
+    default: 'leia'
   kodi-version:  # repo-scripts for github.com/xbmc/repo-scripts or repo-plugins for github.com/xbmc/repo-plugins
     description: 'Repository name (repo-scripts for github.com/xbmc/repo-scripts or repo-plugins for github.com/xbmc/repo-plugins)'
     required: true

@@ -32,7 +32,11 @@ This is equivalent to the **branch** name where your addon lives in the official
 
 ## Example usage
 
-The below configuration will automatically submit your addon to the kodi repository when you create a new tag/release. The configuration assumes you are submitting an addon with id `plugin.video.example` to the branch `leia` of `repo-plugins`.
+The below configuration will automatically submit your addon to the kodi repository when you create a new tag/release. For instance, supposing your addon update is version `1.0.1`:
+
+`git tag 1.0.1 && git push --tags`
+
+The configuration below assumes you are submitting an addon with id `plugin.video.example` to the branch `leia` of `repo-plugins`.
 
 ```yaml
 name: Kodi Addon-Submitter

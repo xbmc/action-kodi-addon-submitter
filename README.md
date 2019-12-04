@@ -86,7 +86,7 @@ jobs:
       uses: actions/checkout@v1
     - name: Generate distribution zip and submit to official kodi repository
       id: kodi-addon-submitter
-      uses: enen92/action-kodi-addon-submitter@v0.4
+      uses: enen92/action-kodi-addon-submitter@v1.0
       with: # Replace all the below values
         kodi-repository: 'repo-plugins'
         kodi-version: 'leia'

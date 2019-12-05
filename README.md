@@ -2,7 +2,7 @@
 
 ![Kodi Logo](https://github.com/xbmc/xbmc/raw/master/docs/resources/banner_slim.png)
 
-This action submits your addon to the official Kodi repository every time you draft a release. In the background it uses [romanvm's kodi-addon-submitter](https://github.com/romanvm/kodi-addon-submitter).
+This action submits your addon to the official Kodi repository every time you push a tag. In the background it uses [romanvm's kodi-addon-submitter](https://github.com/romanvm/kodi-addon-submitter).
 
 ## Inputs
 
@@ -17,7 +17,7 @@ This is equivalent to the **branch** name where your addon lives in the official
 
 ### `addon-id`
 
-**Required** The id of your addon as defined in ([addon.xml](https://kodi.wiki/view/Addon.xml).
+**Required** The id of your addon as defined in [addon.xml](https://kodi.wiki/view/Addon.xml).
 
 ## Secrets
 
@@ -55,11 +55,11 @@ jobs:
       uses: actions/checkout@v1
     - name: Generate distribution zip and submit to official kodi repository
       id: kodi-addon-submitter
-      uses: enen92/action-kodi-addon-submitter@v1.0
+      uses: xbmc/action-kodi-addon-submitter@v1.0
       with: # Replace all the below variables
-        kodi-repository: 'repo-plugins'
-        kodi-version: 'leia'
-        addon-id: 'plugin.video.example'
+        kodi-repository: repo-plugins
+        kodi-version: leia
+        addon-id: plugin.video.example
       env: # Make sure you create the below secrets (GH_TOKEN and EMAIL)
         GH_USERNAME: ${{ github.actor }}
         GH_TOKEN: ${{secrets.GH_TOKEN}}
@@ -86,11 +86,11 @@ jobs:
       uses: actions/checkout@v1
     - name: Generate distribution zip and submit to official kodi repository
       id: kodi-addon-submitter
-      uses: enen92/action-kodi-addon-submitter@v1.0
+      uses: xbmc/action-kodi-addon-submitter@v1.0
       with: # Replace all the below values
-        kodi-repository: 'repo-plugins'
-        kodi-version: 'leia'
-        addon-id: 'plugin.video.example'
+        kodi-repository: repo-plugins
+        kodi-version: leia
+        addon-id: plugin.video.example
       env: # Make sure you create the below secrets (GH_TOKEN and EMAIL)
         GH_USERNAME: ${{ github.actor }}
         GH_TOKEN: ${{secrets.GH_TOKEN}}
@@ -118,7 +118,7 @@ jobs:
 
 ```
 
-**Note:** The ideia of generating a distribution zip is to automatically exclude some of your files from the submission (e.g. tests, .gitignore, .gitattributes, changelog.txt, etc). This can be accomplished if you store a `.gitattributes` file on the root of your repository containing the following:
+**Note:** The ideia of generating a distribution zip is to automatically exclude some of your files from the submission (e.g. tests, .gitignore, .gitattributes, changelog.txt for upper versions of Ko, etc). This can be accomplished if you store a `.gitattributes` file on the root of your repository containing the following:
 
 ```
 .gitignore export-ignore

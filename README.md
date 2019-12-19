@@ -27,7 +27,7 @@ This is equivalent to the **branch** name where your addon lives in the official
 
 ### `EMAIL`
 
-**Optional** A secret containing your email address.
+**Required** A secret containing your email address. This is used in `git config` to submit the pull request.
 
 
 ## Example usage
@@ -118,7 +118,7 @@ jobs:
 
 ```
 
-**Note:** The ideia of generating a distribution zip is to automatically exclude some of your files from the submission (e.g. tests, .gitignore, .gitattributes, changelog.txt for upper versions of Ko, etc). This can be accomplished if you store a `.gitattributes` file on the root of your repository containing the following:
+**Note:** The ideia of generating a distribution zip is to automatically exclude some of your files from the submission (e.g. tests, .gitignore, .gitattributes, changelog.txt for upper versions of Kodi, etc). This can be accomplished if you store a `.gitattributes` file on the root of your repository containing the following:
 
 ```
 .gitignore export-ignore

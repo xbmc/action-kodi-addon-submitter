@@ -19,6 +19,10 @@ This is equivalent to the **branch** name where your addon lives in the official
 
 **Required** The id of your addon as defined in [addon.xml](https://kodi.wiki/view/Addon.xml).
 
+### `kodi-matrix`
+
+**Optional** Boolean indicating if a Python 2/3 compatible addon will be submitted to the `matrix` branch in addition to the target branch. This can be used if you want to update a Python 2/3 compatible addon both in `matrix` (Kodi 19.x) and a lower branch at the same time. Do not use this option if you want to submit a Python 3 addon only to `matrix` branch. Use the `kodi-repository` input for this.
+
 ## Secrets
 
 ### `GH_TOKEN`
@@ -55,11 +59,12 @@ jobs:
       uses: actions/checkout@v1
     - name: Generate distribution zip and submit to official kodi repository
       id: kodi-addon-submitter
-      uses: xbmc/action-kodi-addon-submitter@v1.0
+      uses: xbmc/action-kodi-addon-submitter@v1.1
       with: # Replace all the below variables
         kodi-repository: repo-plugins
         kodi-version: leia
         addon-id: plugin.video.example
+        kodi-matrix: false # Submit a Python 2/3 compatible addon to matrix branch in addition to the target branch
       env: # Make sure you create the below secrets (GH_TOKEN and EMAIL)
         GH_USERNAME: ${{ github.actor }}
         GH_TOKEN: ${{secrets.GH_TOKEN}}
@@ -86,11 +91,12 @@ jobs:
       uses: actions/checkout@v1
     - name: Generate distribution zip and submit to official kodi repository
       id: kodi-addon-submitter
-      uses: xbmc/action-kodi-addon-submitter@v1.0
+      uses: xbmc/action-kodi-addon-submitter@v1.1
       with: # Replace all the below values
         kodi-repository: repo-plugins
         kodi-version: leia
         addon-id: plugin.video.example
+        kodi-matrix: false # Submit a Python 2/3 compatible addon to matrix branch in addition to the target branch
       env: # Make sure you create the below secrets (GH_TOKEN and EMAIL)
         GH_USERNAME: ${{ github.actor }}
         GH_TOKEN: ${{secrets.GH_TOKEN}}

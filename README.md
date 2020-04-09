@@ -33,6 +33,15 @@ This is equivalent to the **branch** name where your addon lives in the official
 
 **Required** A secret containing your email address. This is used in `git config` to submit the pull request.
 
+## Outputs
+
+### `addon-zip`
+
+Path to the addon release zip file
+
+### `addon-zip-matrix`
+
+Path to the addon release zip file for matrix (if `kodi-matrix` input is `true`). This zip uses PEP440 local version identifier.
 
 ## Example usage
 

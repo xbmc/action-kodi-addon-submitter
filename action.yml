@@ -21,6 +21,8 @@ inputs:
 outputs:
     addon-zip:
         description: 'The path to the zip file of the addon'
+    addon-zip-matrix:
+        description: 'The path to the zip file of the addon release for matrix (PEP440 local version identifier) if kodi-matrix input is true.'
 runs:
   using: 'docker'
   image: 'Dockerfile'

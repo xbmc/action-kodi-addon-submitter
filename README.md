@@ -47,7 +47,7 @@ Path to the addon release zip file for matrix (if `kodi-matrix` input is `true`)
 
 The below configuration will automatically submit your addon to the kodi repository when you create a new tag/release. For instance, supposing your addon update is version `1.0.1`:
 
-`git tag 1.0.1 && git push --tags`
+`git tag v1.0.1 && git push --tags`
 
 The configuration below assumes you are submitting an addon with id `plugin.video.example` to the branch `leia` of `repo-plugins`.
 

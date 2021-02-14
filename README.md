@@ -133,11 +133,10 @@ jobs:
 
 ```
 
-**Note:** The idea of generating a distribution zip is to automatically exclude some of your files from the submission (e.g. tests, .gitignore, .gitattributes, changelog.txt for upper versions of Kodi, etc). This can be accomplished if you store a `.gitattributes` file on the root of your repository containing the following:
+**Note:** The idea of generating a distribution zip is to automatically exclude some of your files from the submission (e.g. tests, .gitignore, .gitattributes, etc). This can be accomplished if you store a `.gitattributes` file on the root of your repository containing the following:
 
 ```
 .gitignore export-ignore
 .gitattributes export-ignore
 .github export-ignore
- changelog.txt export-ignore
 ```

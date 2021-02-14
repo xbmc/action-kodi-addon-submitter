@@ -55,7 +55,7 @@ The configuration below assumes you are submitting an addon with id `plugin.vide
 name: Kodi Addon-Submitter
 
 on:
-  create:
+  push:
     tags:
       - v*
 
@@ -87,7 +87,7 @@ The configuration below automatically submits the addon to the same repository b
 name: Kodi Addon-Submitter
 
 on:
-  create:
+  push:
     tags:
       - v*
 

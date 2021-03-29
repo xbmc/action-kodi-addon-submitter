@@ -4,7 +4,7 @@ RUN apk update && \
     apk add git
 
 RUN python -m pip install --upgrade pip && \
-    pip install git+https://github.com/romanvm/kodi-addon-submitter.git
+    pip install git+https://github.com/xbmc/kodi-addon-submitter.git
 
 COPY entrypoint.sh /entrypoint.sh
 

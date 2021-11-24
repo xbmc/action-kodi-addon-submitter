@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-# Add sub directory parameter if requsired
+# Add sub directory parameter if required
 if [ "$5" = true ] ; then
   SUBDIRECTORY="-s"
 else

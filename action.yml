@@ -18,6 +18,10 @@ inputs:
     description: 'Submit a Python 2/3 compatible addon to matrix branch in addition to the target branch'
     required: false
     default: false
+  sub-directory:
+    description: 'Addon is stored in its own directory within the git repo'
+    required: false
+    default: false
 outputs:
     addon-zip:
         description: 'The path to the zip file of the addon'
@@ -31,3 +35,4 @@ runs:
     - ${{ inputs.kodi-version }}
     - ${{ inputs.addon-id }}
     - ${{ inputs.kodi-matrix }}
+    - ${{ inputs.sub-directory }}

@@ -2,7 +2,7 @@
 
 ![Kodi Logo](https://github.com/xbmc/xbmc/raw/master/docs/resources/banner_slim.png)
 
-This action submits your addon to the official Kodi repository every time you push a tag. In the background it uses [romanvm's kodi-addon-submitter](https://github.com/romanvm/kodi-addon-submitter).
+This action submits your addon to the official Kodi repository every time you push a tag. In the background it uses [xbmc's kodi-addon-submitter](https://github.com/xbmc/kodi-addon-submitter).
 
 ## Inputs
 
